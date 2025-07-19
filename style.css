@@ -83,3 +83,12 @@ header img {
 .modal-box button:last-child {
   background: #dc3545;
 }
+footer {
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 14px;
+  background-color: #f8f8f8;
+  color: #555;
+  border-top: 1px solid #ddd;
+}
