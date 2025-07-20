@@ -152,7 +152,7 @@
       </div>
     </section>
 <footer>
-  <p>© <span id="year"></span> StudWeb . All rights reserved.</p>
+<p> Copyright © <span id="year"></span> StudWeb by AstosM. All rights reserved.</p>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
@@ -162,22 +162,37 @@
   Made with ❣️ by Students
 <!-- <a href="https://astosm.github.io/Ashu-Folio/" target="_blank" 
    style="text-decoration: none; font-family:Arial, Helvetica, sans-serif; font-size: 16px;">
-   AstosM -->
-</a>
+   AstosM
+</a> -->
 
 
   <!-- QR Modal -->
-  <div id="qrModal" class="modal">
-    <div class="modal-box">
-      <h3>🪙 Pay ₹5 to Access</h3>
-      <p>Scan the QR code below to pay using any UPI app (GPay, PhonePe, Paytm).</p>
-      <img src="GooglePay_QR (11).png" alt="GPay QR" class="qr" />
-      <p class="small">Once paid, click "Continue" to open the paper.</p>
-      <button onclick="continueToPDF()">Continue</button>
-      <button onclick="closeQR()">Cancel</button>
+<!-- QR Modal -->
+<div id="qrModal" class="modal" style="display:none;">
+  <div class="modal-box">
+    <h3>🪙 Pay ₹5 to Access</h3>
+    <p>Scan the QR code below or use any UPI app (GPay, PhonePe, Paytm).</p>
+    <canvas id="upiQR"></canvas>
+    <p style="font-size: 13px; color: gray;">Or click: <a href="upi://pay?pa=astosm123-2@oksbi&pn=StudWeb&am=5&cu=INR">upi://pay</a></p>
+
+    <div id="txnSection" style="margin-top: 20px;">
+      <label>Enter UPI Transaction ID:</label><br>
+      <input type="text" id="txnInput" placeholder="e.g., 1234567890" />
+      <button onclick="verifyTxn()">Submit</button>
     </div>
+
+    <a id="accessLink" href="#" style="display:none; margin-top:10px;" download>
+      ✅ Download Paper
+    </a>
+
+    <br><br>
+    <button onclick="closeQR()">Cancel</button>
   </div>
+</div>
+
 
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
 </body>
 </html>
