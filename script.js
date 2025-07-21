@@ -38,7 +38,7 @@ function closeQR() {
 
 function verifyTxn() {
   const txn = document.getElementById("txnInput").value.trim();
-  if (txn.length >= 12) {
+  if (txn.length >=3) {
     document.getElementById("accessLink").href = selectedPDF;
     document.getElementById("accessLink").style.display = "inline-block";
   } else {
